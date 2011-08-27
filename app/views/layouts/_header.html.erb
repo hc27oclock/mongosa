@@ -1,0 +1,11 @@
+<header>
+  <% logo = image_tag("logo.png", :alt => "샘플 앱", :class => "round") %>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "시작 화면", root_path %></li>
+      <li><%= link_to "도움말", help_path %></li>
+      <li><%= link_to "로그인", '#' %></li>
+    </ul>
+  </nav>
+</header>

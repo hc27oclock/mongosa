@@ -1,4 +1,6 @@
 Mongosa::Application.routes.draw do
+  match '/signup', :to => 'users#new'
+
   match '/contact', :to => 'pages#contact'
   match '/help', :to => 'pages#help'
   match '/about', :to => 'pages#about'
