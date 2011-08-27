@@ -28,5 +28,19 @@ describe "LayoutLinks" do
     get '/signup'
     response.should have_selector('title', :content => "가입하기")
   end
+  
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "사이트 정보"
+    response.should have_selector('title', :content => "사이트 정보")
+    click_link "도움말"
+    response.should have_selector('title', :content => "도움말")
+    click_link "개발자에게 연락하기"
+    response.should have_selector('title', :content => "개발자에게 연락하기")
+    click_link "시작 화면"
+    response.should have_selector('title', :content => "시작 화면")
+    click_link "지금 가입하세요!"
+    response.should have_selector('title', :content => "가입하기")
+  end
 
 end
