@@ -12,4 +12,8 @@ class PagesController < ApplicationController
   def about
     @title = "사이트 정보"
   end
+  
+  def help
+    @title = "도움말"
+  end
 end
