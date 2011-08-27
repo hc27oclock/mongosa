@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'spec_helper'
 
 
@@ -13,7 +15,7 @@ describe PagesController do
     it "should have the right title" do
       get 'home'
       response.should have_selector("title",
-                        :content => "Ruby on Rails Tutorial Sample App | Home")
+                        :content => "Ruby on Rails Tutorial Sample App | 시작 화면")
     end
   end
 
@@ -27,7 +29,7 @@ describe PagesController do
       get 'contact'
       response.should have_selector("title",
                         :content =>
-                          "Ruby on Rails Tutorial Sample App | Contact")
+                          "Ruby on Rails Tutorial Sample App | 개발자에게 연락하기")
     end
   end
 
@@ -41,7 +43,7 @@ describe PagesController do
       get 'about'
       response.should have_selector("title",
                         :content =>
-                          "Ruby on Rails Tutorial Sample App | About")
+                          "Ruby on Rails Tutorial Sample App | 사이트 정보")
     end
   end
 end
