@@ -1,16 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'uri'
-
-if ENV[“MONGOHQ_URL”] 
-  mongo_uri = URI.parse(ENV[“MONGOHQ_URL”]) 
-  ENV[‘MONGOID_HOST’] = mongo_uri.host 
-  ENV[‘MONGOID_PORT’] = mongo_uri.port.to_s 
-  ENV[“MONGOID_USERNAME”] = mongo_uri.user 
-  ENV[‘MONGOID_PASSWORD’] = mongo_uri.password 
-  ENV[‘MONGOID_DATABASE’] = mongo_uri.path.gsub("/", "") 
-end
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
