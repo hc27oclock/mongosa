@@ -8,6 +8,7 @@ gem 'rails', '3.0.10'
 gem 'sqlite3'
 gem 'mongoid'
 gem 'bson_ext'
+gem 'gravatar_image_tag'
 
 group :development do
   gem 'rspec-rails'
@@ -17,6 +18,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'webrat'
+  gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
