@@ -23,7 +23,7 @@ class User
   end
   
   def self.authenticate(email, submitted_password)
-    user = find_by_email(email)
+    user = where(:email => email).first
     return nil  if user.nil?
     return user if user.has_password?(submitted_password)
   end
