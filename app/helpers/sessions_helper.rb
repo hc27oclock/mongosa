@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module SessionsHelper
   def sign_in(user)
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
@@ -19,6 +21,10 @@ module SessionsHelper
   def sign_out
     cookies.delete(:remember_token)
     self.current_user = nil
+  end
+  
+  def deny_access
+    redirect_to signin_path, :notice => "이 페이지를 보려면 로그인해야 합니다."
   end
   
   private
