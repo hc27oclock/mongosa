@@ -1,0 +1,17 @@
+<h1>로그인</h1>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+  <div class="field">
+    <%= f.label :email, "이메일"  %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password , "비밀번호" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit "로그인" %>
+  </div>
+<% end %>
+
+<p>새로 오셨다면 <%= link_to "가입하세요!", signup_path %></p>

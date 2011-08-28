@@ -14,10 +14,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      sign_in @user
       flash[:success] = "샘플 앱은 진리입니다!"
       redirect_to @user
     else
       @title = "가입하기"
+      @user.password = [], @user.password_confirmation = ""
       render 'new'
     end
   end

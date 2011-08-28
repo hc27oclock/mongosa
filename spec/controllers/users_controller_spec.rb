@@ -99,6 +99,11 @@ describe UsersController do
         post :create, :user => @attr
         flash[:success].should =~ /샘플 앱은 진리입니다/
       end
+      
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
     end
   end
 end
